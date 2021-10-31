@@ -36,5 +36,10 @@ namespace PathCreation.Examples
         void OnPathChanged() {
             distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
         }
+
+        public void changeSpeed(int newSpeed)
+        {
+            speed = newSpeed;
+        }
     }
 }
