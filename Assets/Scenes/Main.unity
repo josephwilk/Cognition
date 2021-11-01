@@ -299,7 +299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34216177}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0000000018626451, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 5684464530176912850}
@@ -3591,7 +3591,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.44895867, g: 0.45222214, b: 0.5377358, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 0.84
   m_Range: 1.7277464
   m_SpotAngle: 47.3299
   m_InnerSpotAngle: 21.80208
@@ -4867,6 +4867,8 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: 682069bfd1387f54ebdb0606752e428c, type: 2}
     - {fileID: 11400000, guid: 1281a8ac8c9a32348a18f2d12e9a23db, type: 2}
+    - {fileID: 11400000, guid: e5005b4360975404bbe77ae1f5bfdc2c, type: 2}
+    - {fileID: 11400000, guid: 68548a2c22c59154c815850cfec2fee1, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -4900,6 +4902,34 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
           m_MethodName: Pause
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5684464529982069624}
+          m_TargetAssemblyTypeName: PathCreation.Examples.PathFollower, Assembly-CSharp
+          m_MethodName: resetProgress
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5684464529982069624}
+          m_TargetAssemblyTypeName: PathCreation.Examples.PathFollower, Assembly-CSharp
+          m_MethodName: changeSpeed
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5505,7 +5535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &661509218
 Light:
   m_ObjectHideFlags: 0
@@ -5518,7 +5548,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5706,7 +5736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712098659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0212, y: 0.025, z: 0}
+  m_LocalPosition: {x: 0.017, y: 0.0132, z: -0.0095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 129227912}
@@ -19646,7 +19676,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 73cd1f8a9a81e2846a8b401745354af7, type: 2}
   m_InitialState: 1
-  m_WrapMode: 2
+  m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -19662,6 +19692,10 @@ PlayableDirector:
     value: {fileID: 5684464530166270611}
   - key: {fileID: 6387829627014550093, guid: 73cd1f8a9a81e2846a8b401745354af7, type: 2}
     value: {fileID: 488648149}
+  - key: {fileID: -2694867664243379141, guid: 73cd1f8a9a81e2846a8b401745354af7, type: 2}
+    value: {fileID: 5684464529982069625}
+  - key: {fileID: -7275406552785991779, guid: 73cd1f8a9a81e2846a8b401745354af7, type: 2}
+    value: {fileID: 4765423644878466099}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &5684464529484722728
@@ -19707,7 +19741,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.44895867, g: 0.45222214, b: 0.5377358, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.26
   m_Range: 1.7277464
   m_SpotAngle: 47.3299
   m_InnerSpotAngle: 21.80208

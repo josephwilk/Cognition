@@ -41,5 +41,10 @@ namespace PathCreation.Examples
         {
             speed = newSpeed;
         }
+
+        public void resetProgress(){
+            //speed = 0;
+            distanceTravelled = 0;
+        }
     }
 }
