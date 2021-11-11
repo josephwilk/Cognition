@@ -43,6 +43,7 @@ namespace PathCreation.Examples
 
                 director.Stop();
                 director.time = 0;
+                director.Play();
 
                 dimLights.setDimValue(0);
 
