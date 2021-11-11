@@ -18,6 +18,15 @@ namespace PathCreation.Examples
         public PathFollower pathFollower;
         public dimLights dimLights;
 
+        public GameObject panel;
+
+        public GameObject controllerMesh;
+
+        public GameObject[] toDisable;
+        
+
+        
+
 
         void Awake()
         {
@@ -38,10 +47,23 @@ namespace PathCreation.Examples
                 dimLights.setDimValue(0);
 
                 pathFollower.resetProgress();
+
+                panel.SetActive(false);
+
+                controllerMesh.SetActive(false);
+
+                foreach(GameObject x in toDisable)
+                {
+                    x.SetActive(false);
+                }
             }
             else if (e.target.name == "ButtonClose")
             {
-                Debug.Log("Button was clicked");
+                //Debug.Log("Button was clicked");
+
+                panel.SetActive(false);
+
+                controllerMesh.SetActive(false);
             }
         }
 
