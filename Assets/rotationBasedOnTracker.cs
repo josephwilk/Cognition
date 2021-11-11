@@ -14,7 +14,9 @@ public class rotationBasedOnTracker : MonoBehaviour
     public Axis axis;
 
     int axisIndex;
-    float lastTrackerRot;
+    //float lastTrackerRot;
+
+    Quaternion lastTrackerRot;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,8 @@ public class rotationBasedOnTracker : MonoBehaviour
         else if (axis == Axis.y) axisIndex = 1;
         else axisIndex = 2;
 
-        lastTrackerRot = rotatingTracker.transform.localEulerAngles.y;
+        //lastTrackerRot = rotatingTracker.transform.localEulerAngles.x;
+        lastTrackerRot = rotatingTracker.transform.localRotation;
     }
 
     // Update is called once per frame
@@ -34,16 +37,32 @@ public class rotationBasedOnTracker : MonoBehaviour
         //Vector3 rot = transform.localEulerAngles;
         //rot[axisIndex] = rotFactor * rotatingTracker.transform.localEulerAngles.y;
         //transform.localEulerAngles = rot;
-        float currentTrackerRot = rotatingTracker.transform.localEulerAngles.y;
+        //float currentTrackerRot = rotatingTracker.transform.localEulerAngles.x;
+
+        //Vector3 rot = new Vector3();
+        //int p = 0;
+        //if (currentTrackerRot < 10 || currentTrackerRot > 350) p = 60;
+        //rot[axisIndex] = (((currentTrackerRot + p) % 360 - (lastTrackerRot + p) % 360)) * rotFactor;
+
+        //transform.Rotate(rot);
+
+        //lastTrackerRot = currentTrackerRot;
+
+
+        Quaternion currentTrackerRotation = rotatingTracker.transform.localRotation;
+
+        float rotAngle = Quaternion.Angle(lastTrackerRot, currentTrackerRotation);
 
         Vector3 rot = new Vector3();
-        int p = 0;
-        if (currentTrackerRot < 10 || currentTrackerRot > 350) p = 60;
-        rot[axisIndex] = (((currentTrackerRot + p) % 360 - (lastTrackerRot + p) % 360) % 360) * rotFactor;
+
+        int direction = 1;
+        if(Vector3.Cross(Quaternion.ToEulerAngles(lastTrackerRot), Quaternion.ToEulerAngles(currentTrackerRotation)).y > 0) direction = -1;
+
+        rot[axisIndex] = rotAngle * rotFactor * direction;
 
         transform.Rotate(rot);
 
-        lastTrackerRot = currentTrackerRot;
+        lastTrackerRot = currentTrackerRotation;
         
     }
 }
