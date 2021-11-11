@@ -114,7 +114,7 @@ Material:
     - _DetailSource: 0
     - _DetailSpecularIntensity: 0.2
     - _DstBlend: 0
-    - _EmissionIntensity: 1
+    - _EmissionIntensity: 0.05
     - _EnableDetailMask: 0
     - _EnableTriplanarProjection: 1
     - _Exposure: 0
@@ -156,7 +156,7 @@ Material:
     - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 0}
     - _DetailSpecularColor: {r: 1, g: 1, b: 1, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0.028301895, g: 0.028301895, b: 0.028301895, a: 1}
     - _GlobalXYTilingXYZWOffsetXY: {r: 1, g: 1, b: 0, a: 0}
     - _GroundColor: {r: 0, g: 0, b: 0, a: 1}
     - _SkyTint: {r: 0, g: 0, b: 0, a: 1}
