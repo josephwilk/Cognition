@@ -28,4 +28,9 @@ public class dimLights : MonoBehaviour
             lights[i].intensity = maxBrightnesses[i] * dimValue;
         }
     }
+
+    public void setDimValue(float value)
+    {
+        dimValue = value;
+    }
 }
