@@ -5,8 +5,12 @@ using UnityEngine.Playables;
 
 public class rotateDoor : MonoBehaviour
 {
+    public float timeUpdateMusic = 0.1f;
+
     public arduinoInput arduino;
     public PlayableDirector timeline;
+
+    public AudioSource audioSource;
 
     public float valueClosed = 0;
     public float valueOpen = 1;
@@ -17,6 +21,9 @@ public class rotateDoor : MonoBehaviour
     public float currentValue;
 
     bool waitingForDoor = false;
+    float lastPercentageOpen = 0;
+
+    float lastTime = 0;
 
     // Update is called once per frame
     void Update()
@@ -37,6 +44,20 @@ public class rotateDoor : MonoBehaviour
             timeline.Resume();
         }
 
+
+        if (Time.time - lastTime >= timeUpdateMusic)
+        {
+            if (Mathf.Abs(lastPercentageOpen - percentageOpen) > 0.01f)
+            {
+                if(!audioSource.isPlaying) audioSource.Play();
+            }
+            else
+            {
+                if(audioSource.isPlaying) audioSource.Pause();
+            }
+            lastPercentageOpen = percentageOpen;
+            lastTime = Time.time;
+        }
     }
 
     public void setWaitingForDoor(bool waiting)
