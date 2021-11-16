@@ -508,6 +508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d6e9f17d4d0bf42864fd2f462cff74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 1
+  rotation: 1
   copyFrom: {fileID: 1734074725}
 --- !u!1 &70507347
 GameObject:
@@ -1209,6 +1211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d6e9f17d4d0bf42864fd2f462cff74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 1
+  rotation: 1
   copyFrom: {fileID: 1799919671}
 --- !u!82 &162831344
 AudioSource:
@@ -6244,6 +6248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d6e9f17d4d0bf42864fd2f462cff74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 1
+  rotation: 1
   copyFrom: {fileID: 5684464529982069625}
 --- !u!82 &641096419
 AudioSource:
@@ -6930,6 +6936,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d6e9f17d4d0bf42864fd2f462cff74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 1
+  rotation: 1
   copyFrom: {fileID: 1869630146}
 --- !u!82 &743307369
 AudioSource:
@@ -14501,6 +14509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d6e9f17d4d0bf42864fd2f462cff74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 1
+  rotation: 1
   copyFrom: {fileID: 1356652966}
 --- !u!82 &1630298612
 AudioSource:
@@ -14760,7 +14770,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730120363}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0.000000029802326, w: 0.7071068}
   m_LocalPosition: {x: 0.00069999695, y: 0.008000016, z: 0.011699738}
   m_LocalScale: {x: 0.1, y: 0.009999992, z: 0.10000002}
   m_Children: []
@@ -14787,7 +14797,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730120363}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -21324,7 +21334,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127090941}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -21387,11 +21397,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127090941}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62d6e9f17d4d0bf42864fd2f462cff74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 0
+  rotation: 1
   copyFrom: {fileID: 1730120363}
 --- !u!1 &2131108610
 GameObject:

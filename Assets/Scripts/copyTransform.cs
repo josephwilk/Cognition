@@ -5,6 +5,9 @@ using UnityEngine;
 public class copyTransform : MonoBehaviour
 {
 
+    public bool position = true;
+    public bool rotation = true;
+
     public GameObject copyFrom;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +18,7 @@ public class copyTransform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = copyFrom.transform.position;
-        transform.rotation = copyFrom.transform.rotation;
+        if(position) transform.position = copyFrom.transform.position;
+        if(rotation) transform.rotation = copyFrom.transform.rotation;
     }
 }

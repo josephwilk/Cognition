@@ -1,0 +1,12 @@
+{
+   "action_manifest_version" : 0,
+   "alias_info" : {},
+   "app_key" : "application.generated.unity.cognition_development.exe",
+   "bindings" : {},
+   "category" : "steamvr_input",
+   "controller_type" : "vive_tracker_handed",
+   "description" : "",
+   "name" : "system_generated_cognition_development_exe_binding_vive_tracker_handed",
+   "options" : {},
+   "simulated_actions" : []
+}
