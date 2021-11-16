@@ -15,6 +15,7 @@ public class get_correct_tracker_id : MonoBehaviour
     //public Valve.VR.SteamVR_TrackedObject tracker_heavy;
     //public Valve.VR.SteamVR_TrackedObject tracker_pipe;
 
+    public string tracker_id;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,10 @@ public class get_correct_tracker_id : MonoBehaviour
         //tracker_heavy = box_heavy.GetComponent<Valve.VR.SteamVR_TrackedObject>();
         //tracker_pipe = pipe.GetComponent<Valve.VR.SteamVR_TrackedObject>();
 
-        string tracker_id = "LHR-BCF1D1CA";
+        // string tracker_id = "LHR-BCF1D1CA";
+        // string tracker_id2 = "LHR-49FDBF12";
+        
+
 
         ETrackedPropertyError error = new ETrackedPropertyError();
         StringBuilder sb = new StringBuilder();
@@ -44,7 +48,7 @@ public class get_correct_tracker_id : MonoBehaviour
         {
             OpenVR.System.GetStringTrackedDeviceProperty((uint)i, ETrackedDeviceProperty.Prop_SerialNumber_String, sb, OpenVR.k_unMaxPropertyStringSize, ref error);
             var probablyUniqueDeviceSerial = sb.ToString();
-            //Debug.Log(i + " : " + probablyUniqueDeviceSerial);
+            Debug.Log(i + " : " + probablyUniqueDeviceSerial);
 
             if (string.Compare(probablyUniqueDeviceSerial, tracker_id) == 0)
             {
