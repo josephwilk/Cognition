@@ -1626,7 +1626,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189090513}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -14797,7 +14797,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730120363}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -17881,10 +17881,10 @@ MonoBehaviour:
   arduino: {fileID: 2131108611}
   timeline: {fileID: 5684464529481999735}
   audioSource: {fileID: 162831344}
-  valueClosed: 0.56
-  valueOpen: 0
+  valueClosed: 0.86
+  valueOpen: 0.39
   rotationClosed: 0
-  rotationOpen: -100
+  rotationOpen: -90
   currentValue: 0
 --- !u!95 &1999786030
 Animator:
