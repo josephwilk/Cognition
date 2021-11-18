@@ -27,6 +27,22 @@ public class rotationBasedOnTracker : MonoBehaviour
 
         //lastTrackerRot = rotatingTracker.transform.localEulerAngles.x;
         lastTrackerRot = rotatingTracker.transform.localRotation;
+
+
+        // Quaternion currentTrackerRotation = rotatingTracker.transform.localRotation;
+
+        // float rotAngle = Quaternion.Angle(lastTrackerRot, currentTrackerRotation);
+
+        // Vector3 rot = new Vector3();
+
+        // int direction = 1;
+        // if(Vector3.Cross(Quaternion.ToEulerAngles(lastTrackerRot), Quaternion.ToEulerAngles(currentTrackerRotation)).y > 0) direction = -1;
+
+        // rot[axisIndex] = rotAngle * rotFactor * direction;
+
+        // transform.Rotate(rot);
+
+        // lastTrackerRot = currentTrackerRotation;
     }
 
     // Update is called once per frame
@@ -51,16 +67,21 @@ public class rotationBasedOnTracker : MonoBehaviour
 
         Quaternion currentTrackerRotation = rotatingTracker.transform.localRotation;
 
-        float rotAngle = Quaternion.Angle(lastTrackerRot, currentTrackerRotation);
+        Quaternion rotation = Quaternion.Inverse(lastTrackerRot) * currentTrackerRotation;
 
-        Vector3 rot = new Vector3();
+        transform.rotation *= Quaternion.SlerpUnclamped(Quaternion.identity, rotation, rotFactor) ;
 
-        int direction = 1;
-        if(Vector3.Cross(Quaternion.ToEulerAngles(lastTrackerRot), Quaternion.ToEulerAngles(currentTrackerRotation)).y > 0) direction = -1;
 
-        rot[axisIndex] = rotAngle * rotFactor * direction;
+        // float rotAngle = Quaternion.Angle(lastTrackerRot, currentTrackerRotation);
 
-        transform.Rotate(rot);
+        // Vector3 rot = new Vector3();
+
+        // int direction = 1;
+        // //if(Vector3.Cross(Quaternion.ToEulerAngles(lastTrackerRot), Quaternion.ToEulerAngles(currentTrackerRotation)).y > 0) direction = -1;
+
+        // rot[axisIndex] = rotAngle * rotFactor * direction;
+
+        // transform.Rotate(rot);
 
         lastTrackerRot = currentTrackerRotation;
         
