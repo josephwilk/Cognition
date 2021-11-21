@@ -19,8 +19,9 @@ public class rotationTracker2 : MonoBehaviour
     {
         Vector3 direction = tracker2.position - tracker1.position;
 
-
-        transform.forward = Vector3.Cross(Vector3.Cross(similarCube.up, direction), similarCube.up);
+        //transform.forward = Vector3.ProjectOnPlane(direction, similarCube.up);
+        transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(direction, similarCube.up), similarCube.up);
+        //transform.forward = Vector3.Cross(Vector3.Cross(similarCube.up, direction), similarCube.up);
         // Vector3 rot = transform.localEulerAngles;
         // rot.x = 0;
         // rot.z = 0;

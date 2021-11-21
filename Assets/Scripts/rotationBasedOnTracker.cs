@@ -69,7 +69,7 @@ public class rotationBasedOnTracker : MonoBehaviour
 
         Quaternion rotation = Quaternion.Inverse(lastTrackerRot) * currentTrackerRotation;
 
-        transform.rotation *= Quaternion.SlerpUnclamped(Quaternion.identity, rotation, rotFactor) ;
+        transform.localRotation *= Quaternion.SlerpUnclamped(Quaternion.identity, rotation, rotFactor) ;
 
 
         // float rotAngle = Quaternion.Angle(lastTrackerRot, currentTrackerRotation);
