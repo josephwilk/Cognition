@@ -22,12 +22,22 @@ public class rotateDoor : MonoBehaviour
 
     bool waitingForDoor = false;
     float lastPercentageOpen = 0;
+    float timeSinceWaitingForDoor = 0;
+    public float timeToShowHint = 20;
 
     float lastTime = 0;
+
+
+    public Animator doorAnimator;
+
+   
+
 
     // Update is called once per frame
     void Update()
     {
+
+        
         // get current value from arduino
         currentValue = arduino.value; 
 
@@ -42,7 +52,24 @@ public class rotateDoor : MonoBehaviour
         {
             waitingForDoor = false;
             timeline.Resume();
+            doorAnimator.enabled = false;
+            doorAnimator.gameObject.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
+            
+
+            //doorAnimator.gameObject.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
+            //doorAnimator.gameObject.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
+            //doorHintAnimation.Stop();
+
         }
+
+        if (!waitingForDoor) timeSinceWaitingForDoor = Time.time;
+        else if (Time.time - timeSinceWaitingForDoor > timeToShowHint)
+        {
+            doorAnimator.enabled = true;
+            doorAnimator.gameObject.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
+        }
+
+        //else if (Time.time - timeSinceWaitingForDoor > timeToShowHint) doorHintAnimation.Play();
 
 
         if (Time.time - lastTime >= timeUpdateMusic)
