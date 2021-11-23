@@ -8,6 +8,7 @@ public class arduinoInput: MonoBehaviour
     Joystick joystick;
     //Controls controls;
     public float value = 0;
+    public float value2 = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class arduinoInput: MonoBehaviour
         {
             Debug.Log(joystick.stick.x.ReadValue() + ", " + -joystick.stick.y.ReadValue());
             value = joystick.stick.x.ReadValue();
+            value2 = -joystick.stick.y.ReadValue();
         }
     }
 }

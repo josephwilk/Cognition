@@ -22,8 +22,10 @@ public class rotateDoor : MonoBehaviour
 
     bool waitingForDoor = false;
     float lastPercentageOpen = 0;
+
     float timeSinceWaitingForDoor = 0;
     public float timeToShowHint = 20;
+    public bool showHint = true;
 
     float lastTime = 0;
 
@@ -40,6 +42,7 @@ public class rotateDoor : MonoBehaviour
         
         // get current value from arduino
         currentValue = arduino.value; 
+        if(!showHint) currentValue = arduino.value2;
 
         float percentageOpen = (currentValue - valueClosed) / (valueOpen - valueClosed);
         Vector3 rot = new Vector3(0, Mathf.Lerp(rotationClosed, rotationOpen, percentageOpen), 0);
@@ -52,8 +55,12 @@ public class rotateDoor : MonoBehaviour
         {
             waitingForDoor = false;
             timeline.Resume();
-            doorAnimator.enabled = false;
-            doorAnimator.gameObject.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
+
+            if(showHint) 
+            {
+                doorAnimator.enabled = false;
+                doorAnimator.gameObject.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
+            }
             
 
             //doorAnimator.gameObject.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
@@ -63,7 +70,7 @@ public class rotateDoor : MonoBehaviour
         }
 
         if (!waitingForDoor) timeSinceWaitingForDoor = Time.time;
-        else if (Time.time - timeSinceWaitingForDoor > timeToShowHint)
+        else if (showHint && Time.time - timeSinceWaitingForDoor > timeToShowHint)
         {
             doorAnimator.enabled = true;
             doorAnimator.gameObject.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");

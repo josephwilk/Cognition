@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class playTimeline : MonoBehaviour
+public class PlayTimeline : MonoBehaviour
 {
 
     public PlayableDirector director;
+    
 
-    private void OnEnable()
+    public void startPlaying()
     {
         director.time = 0;
         director.Play();
