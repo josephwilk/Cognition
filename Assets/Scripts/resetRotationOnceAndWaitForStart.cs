@@ -13,6 +13,9 @@ public class resetRotationOnceAndWaitForStart : MonoBehaviour
     float startTime;
     bool rotationReset = false;
 
+    public float timeToShowHint = 20;
+    public Animator handCrankAnimator;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,12 @@ public class resetRotationOnceAndWaitForStart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Time.time - startTime > timeToShowHint)
+        {
+            handCrankAnimator.enabled = true;
+            handCrankAnimator.gameObject.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
+        }
+
         if(!rotationReset && Time.time - startTime > targetTime) 
         {
             transform.localRotation = rot;
@@ -34,6 +43,10 @@ public class resetRotationOnceAndWaitForStart : MonoBehaviour
         if(rotationReset && Quaternion.Angle(rot, transform.localRotation) > 90) 
         {
             playTimeline.startPlaying();
+
+            handCrankAnimator.enabled = false;
+            handCrankAnimator.gameObject.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
+
             base.enabled = false;
         }
     }
