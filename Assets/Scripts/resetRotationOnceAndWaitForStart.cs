@@ -66,14 +66,17 @@ public class resetRotationOnceAndWaitForStart : MonoBehaviour
          
         if (Time.time - lastTime >= timeUpdateMusic)
         {
-            if (Quaternion.Angle(lastRotation, transform.localRotation) > 1)
-            {
-                if(!audioSource.isPlaying) audioSource.Play();
-            }
-            else
-            {
-                if(audioSource.isPlaying) audioSource.Pause();
-            }
+            // if (Quaternion.Angle(lastRotation, transform.localRotation) > 1)
+            // {
+            //     if(!audioSource.isPlaying) audioSource.Play();
+            // }
+            // else
+            // {
+            //     if(audioSource.isPlaying) audioSource.Pause();
+            // }
+
+            audioSource.volume = Mathf.Lerp(0.1f, 1, Quaternion.Angle(lastRotation, transform.localRotation));
+
             lastRotation = transform.localRotation;
             lastTime = Time.time;
         }
