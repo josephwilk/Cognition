@@ -15,6 +15,14 @@ public class resetRotationOnceAndWaitForStart : MonoBehaviour
 
     public float timeToShowHint = 20;
     public Animator handCrankAnimator;
+
+    public AudioSource audioSource;
+    float lastTime = 0;
+    public float timeUpdateMusic = 0.1f;
+    Quaternion lastRotation;
+
+
+    bool timelineStarted = false;
     
 
     // Start is called before the first frame update
@@ -27,27 +35,48 @@ public class resetRotationOnceAndWaitForStart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time - startTime > timeToShowHint)
+        if(!timelineStarted) 
         {
-            handCrankAnimator.enabled = true;
-            handCrankAnimator.gameObject.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
-        }
+            if(Time.time - startTime > timeToShowHint)
+            {
+                handCrankAnimator.enabled = true;
+                handCrankAnimator.gameObject.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
+            }
 
-        if(!rotationReset && Time.time - startTime > targetTime) 
+            if(!rotationReset && Time.time - startTime > targetTime) 
+            {
+                transform.localRotation = rot;
+                rotationReset = true;
+                rot = transform.localRotation;
+            }
+
+            if(rotationReset && Quaternion.Angle(rot, transform.localRotation) > 90) 
+            {
+                playTimeline.startPlaying();
+
+                handCrankAnimator.enabled = false;
+                handCrankAnimator.gameObject.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
+
+                // base.enabled = false;
+                timelineStarted = true;
+            }
+        }
+         
+
+         
+        if (Time.time - lastTime >= timeUpdateMusic)
         {
-            transform.localRotation = rot;
-            rotationReset = true;
-            rot = transform.localRotation;
+            if (Quaternion.Angle(lastRotation, transform.localRotation) > 1)
+            {
+                if(!audioSource.isPlaying) audioSource.Play();
+            }
+            else
+            {
+                if(audioSource.isPlaying) audioSource.Pause();
+            }
+            lastRotation = transform.localRotation;
+            lastTime = Time.time;
         }
-
-        if(rotationReset && Quaternion.Angle(rot, transform.localRotation) > 90) 
-        {
-            playTimeline.startPlaying();
-
-            handCrankAnimator.enabled = false;
-            handCrankAnimator.gameObject.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
-
-            base.enabled = false;
-        }
+        
     }
 }
