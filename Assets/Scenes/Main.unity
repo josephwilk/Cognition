@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.001385883, g: 0.001385883, b: 0.001385883, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: 1
   rotation: 1
-  copyFrom: {fileID: 0}
+  copyFrom: {fileID: 426095522}
 --- !u!82 &162831344
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3393,8 +3393,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 543450652029041278}
-  - {fileID: 943468549}
   - {fileID: 1593265662630967238}
+  - {fileID: 943468549}
   m_Father: {fileID: 543450653004497506}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -3826,7 +3826,7 @@ MonoBehaviour:
   targetTime: 0.1
   playTimeline: {fileID: 872548618}
   timeToShowHint: 20
-  handCrankAnimator: {fileID: 0}
+  handCrankAnimator: {fileID: 6983472736078979238}
   audioSource: {fileID: 1029121121}
   timeUpdateMusic: 0.1
 --- !u!114 &690619006
@@ -7394,7 +7394,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.44895867, g: 0.45222214, b: 0.5377358, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.5
   m_Range: 1
   m_SpotAngle: 60
   m_InnerSpotAngle: 21.80208
@@ -10318,7 +10318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: 1
   rotation: 1
-  copyFrom: {fileID: 0}
+  copyFrom: {fileID: 113261399}
 --- !u!82 &1696686545
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11190,7 +11190,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.44895867, g: 0.45222214, b: 0.5377358, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.5
   m_Range: 1
   m_SpotAngle: 60
   m_InnerSpotAngle: 21.80208
@@ -14772,7 +14772,7 @@ Transform:
   m_LocalScale: {x: 1000, y: 999.9997, z: 999.9997}
   m_Children: []
   m_Father: {fileID: 597278416}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1625530156310584669
 MeshRenderer:
@@ -20657,6 +20657,7 @@ GameObject:
   - component: {fileID: 1524434865700110987}
   - component: {fileID: 7129915627412735774}
   - component: {fileID: 7489732855023299381}
+  - component: {fileID: 6983472736078979238}
   m_Layer: 0
   m_Name: Crank.Handle.ASCII
   m_TagString: Untagged
@@ -20664,6 +20665,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &6983472736078979238
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983472736078979237}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2cb8aa16a9eb3114289ef40c347f5049, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &7000165004370193342
 Transform:
   m_ObjectHideFlags: 0
