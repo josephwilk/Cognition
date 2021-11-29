@@ -50,7 +50,7 @@ public class resetRotationOnceAndWaitForStart : MonoBehaviour
                 rot = transform.localRotation;
             }
 
-            if(rotationReset && Quaternion.Angle(rot, transform.localRotation) > 90) 
+            if((rotationReset && Quaternion.Angle(rot, transform.localRotation) > 90) || Time.time - startTime > 60) 
             {
                 playTimeline.startPlaying();
 
@@ -75,7 +75,7 @@ public class resetRotationOnceAndWaitForStart : MonoBehaviour
             //     if(audioSource.isPlaying) audioSource.Pause();
             // }
 
-            audioSource.volume = Mathf.Lerp(0.1f, 1, Quaternion.Angle(lastRotation, transform.localRotation));
+            audioSource.volume = Mathf.Lerp(0.1f, 1, Quaternion.Angle(lastRotation, transform.localRotation) / 10);
 
             lastRotation = transform.localRotation;
             lastTime = Time.time;

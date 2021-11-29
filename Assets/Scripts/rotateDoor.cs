@@ -51,7 +51,7 @@ public class rotateDoor : MonoBehaviour
 
 
 
-        if (percentageOpen > 0.9 && waitingForDoor)
+        if ((percentageOpen > 0.9 && waitingForDoor) || (Time.time - timeSinceWaitingForDoor > 40))
         {
             waitingForDoor = false;
             timeline.Resume();
@@ -68,6 +68,8 @@ public class rotateDoor : MonoBehaviour
             //doorHintAnimation.Stop();
 
         }
+
+        
 
         if (!waitingForDoor) timeSinceWaitingForDoor = Time.time;
         else if (showHint && Time.time - timeSinceWaitingForDoor > timeToShowHint)

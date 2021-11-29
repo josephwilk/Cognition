@@ -3177,10 +3177,10 @@ MonoBehaviour:
   m_Clips:
   - m_Version: 1
     m_Start: 0
-    m_ClipIn: 0
+    m_ClipIn: 0.3
     m_Asset: {fileID: 3295347078310696802}
-    m_Duration: 20
-    m_TimeScale: 0.05
+    m_Duration: 7
+    m_TimeScale: 0.1
     m_ParentTrack: {fileID: 2272230556563749733}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
@@ -3241,7 +3241,7 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 39
+    m_PostExtrapolationTime: 52
     m_PreExtrapolationTime: 0
     m_DisplayName: turnOnLights
   - m_Version: 1
