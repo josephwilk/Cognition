@@ -605,10 +605,10 @@ MonoBehaviour:
   arduino: {fileID: 2131108611}
   timeline: {fileID: 5684464529481999735}
   audioSource: {fileID: 1696686545}
-  valueClosed: 0.86
-  valueOpen: 0.39
+  valueClosed: 0.42
+  valueOpen: 0.09
   rotationClosed: 0
-  rotationOpen: -90
+  rotationOpen: -100
   currentValue: 0
   timeToShowHint: 20
   showHint: 0
@@ -2701,8 +2701,8 @@ MonoBehaviour:
   arduino: {fileID: 2131108611}
   timeline: {fileID: 5684464529481999735}
   audioSource: {fileID: 162831344}
-  valueClosed: 0.86
-  valueOpen: 0.39
+  valueClosed: 0.67
+  valueOpen: 0.225
   rotationClosed: 0
   rotationOpen: -90
   currentValue: 0
@@ -7672,7 +7672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1171864812
 Transform:
   m_ObjectHideFlags: 0
@@ -11004,7 +11004,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 04691cde65e04cf4ab2fae84f44343e8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -19989,7 +19989,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 4.775446e-39, y: 9.1835e-41, z: 1.8e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
