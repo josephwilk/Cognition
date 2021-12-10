@@ -25,7 +25,7 @@ public class PlayTimeline : MonoBehaviour
             }
 
             // if nearly at end and paused for more than 25 sec:
-            if(director.duration - director.time < 20 && Time.time - lastStopTime > 25) 
+            if(director.duration - director.time < 50 && Time.time - lastStopTime > 25) 
             {
                 director.Play();
             }
